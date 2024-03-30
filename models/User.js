@@ -2,7 +2,17 @@ const { Schema, model, models } = require('mongoose');
 const bcrypt = require('bcrypt')
 
 const UserSchema = new Schema({
+  username: {
+    type: String, 
+    required: true,
+  },
 // Create a username property of type String that is required
+  password: {
+    type: String,
+    required: true,
+    minLength: 5,
+    maxLength: 20,
+  },
 // Create a password property of type String that is required
 // with minimum length of 5 and max length 20
 })
